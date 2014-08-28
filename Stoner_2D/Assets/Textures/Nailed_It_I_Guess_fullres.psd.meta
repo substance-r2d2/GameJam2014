@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: d8fccdb1abd59134580a168611d74a03
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Nailed_It_I_Guess_fullres_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1495
+        width: 554
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_1
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1495
+        width: 370
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_2
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1495
+        width: 308
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 798
+        width: 268
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_4
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 819
+        width: 267
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_5
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 839
+        width: 267
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_6
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 122
+        width: 309
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nailed_It_I_Guess_fullres_7
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 163
+        width: 411
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
