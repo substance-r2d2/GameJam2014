@@ -5,6 +5,8 @@ Project("{2A4293D8-1428-785E-1E14-DEB34BF6D062}") = "Stoner_2D", "Assembly-CShar
 EndProject
 Project("{2A4293D8-1428-785E-1E14-DEB34BF6D062}") = "Stoner_2D", "Assembly-CSharp.csproj", "{CD4A5EEB-0003-0C6A-9C95-097BBBBE2720}"
 EndProject
+Project("{2A4293D8-1428-785E-1E14-DEB34BF6D062}") = "Stoner_2D", "Assembly-UnityScript-firstpass.unityproj", "{D6DA5302-BC04-A843-F361-9791046C3E15}"
+EndProject
 Project("{2A4293D8-1428-785E-1E14-DEB34BF6D062}") = "Stoner_2D", "Assembly-UnityScript.unityproj", "{8FBB3665-D8F2-EC21-D7F3-B93D7A784358}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{CD4A5EEB-0003-0C6A-9C95-097BBBBE2720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD4A5EEB-0003-0C6A-9C95-097BBBBE2720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD4A5EEB-0003-0C6A-9C95-097BBBBE2720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DA5302-BC04-A843-F361-9791046C3E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DA5302-BC04-A843-F361-9791046C3E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DA5302-BC04-A843-F361-9791046C3E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DA5302-BC04-A843-F361-9791046C3E15}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FBB3665-D8F2-EC21-D7F3-B93D7A784358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FBB3665-D8F2-EC21-D7F3-B93D7A784358}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FBB3665-D8F2-EC21-D7F3-B93D7A784358}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																														GlobalSection(MonoDevelopProperties) = preSolution
+																																GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

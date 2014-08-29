@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Behaviour\BulletDamage.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Behaviour\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Behaviour\JumpPlayer.cs" />
      <Compile Include="Assets\Scripts\Behaviour\TreeEnemyHit.cs" />
@@ -68,6 +69,8 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{20ECF450-E927-590A-7AC1-6292F911142C}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{D6DA5302-BC04-A843-F361-9791046C3E15}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

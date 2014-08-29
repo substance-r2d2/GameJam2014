@@ -29,7 +29,7 @@ public class PlayerStateListener : MonoBehaviour
 				EventHandler.AddListener (EEventID.EVENT_PLAYER_CHANGE_STATE, OnPlayerChange);
 				EventHandler.AddListener (EEventID.EVENT_CONTROLLER_STATE_CHANGE, OnControllerStateChange);
 				environments = GameObject.Find("Parallexed_Bg").GetComponentsInChildren<parallax>();
-				OnControllerStateChange( EControllerState.EFreeRunnerLeft);
+				OnControllerStateChange( EControllerState.EPlatformer);
 		}
 
 		void OnEnable ()

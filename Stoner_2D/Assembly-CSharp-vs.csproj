@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Behaviour\BulletDamage.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Behaviour\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Behaviour\JumpPlayer.cs" />
      <Compile Include="Assets\Scripts\Behaviour\TreeEnemyHit.cs" />
@@ -64,6 +65,9 @@
      <Compile Include="Assets\Scripts\Handlers\PlayerHealthHandler.cs" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Floatate\readme.txt" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/Jithin/Documents/GitHub/GameJam2014/Stoner_2D/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
