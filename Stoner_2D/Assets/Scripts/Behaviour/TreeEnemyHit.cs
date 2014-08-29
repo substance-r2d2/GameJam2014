@@ -15,6 +15,28 @@ public class TreeEnemyHit : MonoBehaviour {
     bullet.SetActive(false);
   }
 
+  void OnCollisionEnter2D(Collision2D other)
+  {
+    if(other.gameObject.tag == "Player")
+    {
+      switch(PlayerStateListener.m_ePlayerState)
+      {
+        case EPLayerState.ERock:
+          if (PlayerStateListener.previousState == PlayerStateController.playerStates.rock_roll)
+          {
+            Destroy(gameObject);
+          }
+          else
+            Debug.Log("damage" +" "+ PlayerStateListener.previousState);
+          break;
+
+        case EPLayerState.EMud:
+          Debug.Log("Damage 5 pts");
+          break;
+      }
+    }
+  }
+
   void Update()
   {
     BulletSpawnTime += Time.deltaTime;

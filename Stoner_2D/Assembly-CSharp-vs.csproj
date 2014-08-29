@@ -46,11 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Behaviour\BulletDamage.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\JumpPlayer.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\TreeEnemyHit.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\parallax.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerHandler.cs" />
      <Compile Include="Assets\Scripts\Globals\Const.cs" />
      <Compile Include="Assets\Scripts\Handlers\Callback.cs" />
      <Compile Include="Assets\Scripts\Handlers\EventHandler.cs" />
+     <Compile Include="Assets\Scripts\PlayerStateController.cs" />
+     <Compile Include="Assets\Scripts\PlayerStateListener.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
