@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\Globals\Const.cs" />
      <Compile Include="Assets\Scripts\Handlers\Callback.cs" />
      <Compile Include="Assets\Scripts\Handlers\EventHandler.cs" />
+     <Compile Include="Assets\Scripts\Handlers\HudController.cs" />
+     <Compile Include="Assets\Scripts\Handlers\PlayerHealthHandler.cs" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Floatate\readme.txt" />
   </ItemGroup>

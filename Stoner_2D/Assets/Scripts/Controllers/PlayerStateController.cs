@@ -83,9 +83,16 @@ public class PlayerStateController : MonoBehaviour
       switch (PlayerStateListener.m_ePlayerState)
       {
         case EPLayerState.ERock:
-          if (onStateChange != null)
-            EventHandler.TriggerEvent(EEventID.EVENT_PLAYER_CHANGE_STATE, EPLayerState.EMud);
+			{
+	          if (onStateChange != null)
+	            EventHandler.TriggerEvent(EEventID.EVENT_PLAYER_CHANGE_STATE, EPLayerState.EMud);
 
+				//TODO : DELETE
+				Hashtable data = new Hashtable();
+				data.Add("meter", EPLayerState.EMud);
+				data.Add("value", 4.0f);
+				EventHandler.TriggerEvent(EEventID.EVENT_HUD_HEALTH_CHANGE, data);
+			}
           break;
       }
     }
