@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b95a361152c2c434f97e8c2540618943
+guid: 4271108b08f8f494fafdc11f90d66b95
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -36,51 +36,81 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: temp_collectible_1_0
+    - name: rock_hop_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 545
-        width: 512
-        height: 479
+        y: 1
+        width: 37
+        height: 50
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: temp_collectible_1_1
+    - name: rock_hop_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 545
-        width: 512
-        height: 479
+        x: 38
+        y: 1
+        width: 37
+        height: 50
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: temp_collectible_1_2
+    - name: rock_hop_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 99
-        width: 512
-        height: 479
+        x: 76
+        y: 1
+        width: 37
+        height: 50
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: temp_collectible_1_3
+    - name: rock_hop_3
       rect:
         serializedVersion: 2
-        x: 512
-        y: 99
-        width: 512
-        height: 479
+        x: 114
+        y: 1
+        width: 37
+        height: 50
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_hop_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_hop_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_hop_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

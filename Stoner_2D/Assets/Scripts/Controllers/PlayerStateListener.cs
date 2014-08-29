@@ -9,13 +9,16 @@ public class PlayerStateListener : MonoBehaviour
 		public float maxSpeed = 5;
 		public float moveForce = 365f;			// Amount of force added to move the player left and right.
 		public float maxJumpForce = 100f;
+		public float freeRunnerSpeed = 1;
+
+
 		private Animator anim;
 		private float time = 0;
 		private parallax[] environments;
+		private EControllerState m_eControllerState;
 
 		[HideInInspector]
-		public bool
-				facingRight = true;			// For determining which way the player is currently facing.
+		public bool facingRight = true;			// For determining which way the player is currently facing.
 
 		public static EPLayerState m_ePlayerState;
 		public static string StateTag = "Rock";
@@ -24,7 +27,9 @@ public class PlayerStateListener : MonoBehaviour
 		{
 				anim = GetComponent<Animator> ();
 				EventHandler.AddListener (EEventID.EVENT_PLAYER_CHANGE_STATE, OnPlayerChange);
-				environments = GameObject.Find("Parallexed_Bg").GetComponentsInChildren<parallax> ();
+				EventHandler.AddListener (EEventID.EVENT_CONTROLLER_STATE_CHANGE, OnControllerStateChange);
+				environments = GameObject.Find("Parallexed_Bg").GetComponentsInChildren<parallax>();
+				OnControllerStateChange( EControllerState.EFreeRunnerLeft);
 		}
 
 		void OnEnable ()
@@ -50,10 +55,10 @@ public class PlayerStateListener : MonoBehaviour
 						break;
 
 				case PlayerStateController.playerStates.mud_idle:
-						{
-							
-						}
-						break;
+					{
+						
+					}
+					break;
 
 				case PlayerStateController.playerStates.mud_shoot:
 						break;
@@ -67,6 +72,11 @@ public class PlayerStateListener : MonoBehaviour
 
 			}
 		}
+		
+		void OnFreeRunnerCycle()
+		{
+			MovePlayerRunner ();
+		}
 
 		void OnStateChange (PlayerStateController.playerStates newState)
 		{
@@ -78,7 +88,8 @@ public class PlayerStateListener : MonoBehaviour
 
 				switch (newState) {
 				case PlayerStateController.playerStates.rock_idle:
-						m_ePlayerState = EPLayerState.ERock;
+						if(m_eControllerState == EControllerState.EPlatformer)
+							m_ePlayerState = EPLayerState.ERock;
 						break;
 
 				case PlayerStateController.playerStates.rock_left:
@@ -95,10 +106,11 @@ public class PlayerStateListener : MonoBehaviour
 
 				case PlayerStateController.playerStates.rock_jump:
 						m_ePlayerState = EPLayerState.ERock;
-						rigidbody2D.AddForce (new Vector2 (0, 200));
+						rigidbody2D.AddForce (new Vector2 (0, maxJumpForce));
 						break;
 
 				case PlayerStateController.playerStates.mud_idle:
+						if(m_eControllerState == EControllerState.EPlatformer)
 						m_ePlayerState = EPLayerState.EMud;
 						break;
 
@@ -145,7 +157,10 @@ public class PlayerStateListener : MonoBehaviour
 
 		void FixedUpdate ()
 		{
-				OnStateCycle ();
+			if (m_eControllerState == EControllerState.EPlatformer)
+						OnStateCycle ();
+				else
+						OnFreeRunnerCycle ();
 				SetBgScrollRate ();
 		}
 
@@ -163,7 +178,6 @@ public class PlayerStateListener : MonoBehaviour
 		void MovePlayer ()
 		{
 				float h = Input.GetAxis ("Horizontal");
-                Debug.Log(h);
 				anim.SetFloat ("Speed", Mathf.Abs (h));		
 
 				// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
@@ -187,6 +201,29 @@ public class PlayerStateListener : MonoBehaviour
 			
 		}
 
+		void MovePlayerRunner()
+		{
+			
+			anim.SetFloat ("Speed", freeRunnerSpeed);
+			if (freeRunnerSpeed * rigidbody2D.velocity.x < maxSpeed)
+				// ... add a force to the player.
+				rigidbody2D.AddForce (Vector2.right * freeRunnerSpeed * moveForce);
+			
+			// If the player's horizontal velocity is greater than the maxSpeed...
+			if (Mathf.Abs (rigidbody2D.velocity.x) > maxSpeed)
+				// ... set the player's velocity to the maxSpeed in the x axis.
+				rigidbody2D.velocity = new Vector2 (Mathf.Sign (rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+			
+			// If the input is moving the player right and the player is facing left...
+			if (freeRunnerSpeed > 0 && !facingRight)
+				// ... flip the player.
+				Flip ();
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if (freeRunnerSpeed < 0 && facingRight)
+				// ... flip the player.
+				Flip ();
+		}
+
 		public void OnPlayerChange(System.Object newState)
 		{
 			if ((EPLayerState)newState == EPLayerState.ERock && PlayerStateListener.m_ePlayerState != EPLayerState.ERock) {
@@ -199,6 +236,16 @@ public class PlayerStateListener : MonoBehaviour
 							anim.SetBool("is_rock", true);
 						Debug.Log("Changing from mud to rock");
 				}
+		}
+
+		public void OnControllerStateChange(System.Object newState)
+		{
+			m_eControllerState = (EControllerState)newState;
+			if (m_eControllerState == EControllerState.EFreeRunnerRight)
+						freeRunnerSpeed = 1f;
+				else
+				if (m_eControllerState == EControllerState.EFreeRunnerLeft)
+						freeRunnerSpeed = -1f;
 		}
 
 		public void SetBgScrollRate()

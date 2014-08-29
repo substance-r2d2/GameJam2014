@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\Controllers\PlayerHandler.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerStateController.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerStateListener.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\FollowPath.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\PathDefinition.cs" />
      <Compile Include="Assets\Scripts\Globals\Const.cs" />
      <Compile Include="Assets\Scripts\Handlers\Callback.cs" />
      <Compile Include="Assets\Scripts\Handlers\EventHandler.cs" />

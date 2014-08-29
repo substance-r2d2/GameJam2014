@@ -19,7 +19,7 @@ public class TreeEnemyHit : MonoBehaviour {
   {
     if(other.gameObject.tag == "Player")
     {
-      switch(PlayerStateListener.m_ePlayerState)
+      /*switch(PlayerStateListener.m_ePlayerState)
       {
         case EPLayerState.ERock:
           if (PlayerStateListener.previousState == PlayerStateController.playerStates.rock_roll)
@@ -33,7 +33,7 @@ public class TreeEnemyHit : MonoBehaviour {
         case EPLayerState.EMud:
           Debug.Log("Damage 5 pts");
           break;
-      }
+      }*/
     }
   }
 

@@ -8,3 +8,12 @@ public enum EPLayerState
 	EMud,
 	Count
 }
+
+public enum EControllerState
+{
+	ENone = -1,
+	EPlatformer,
+	EFreeRunnerRight,
+	EFreeRunnerLeft,
+	Count
+}

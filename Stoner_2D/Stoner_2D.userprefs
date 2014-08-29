@@ -1,13 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Handlers\HudController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Controllers\PlayerStateListener.cs">
     <Files>
       <File FileName="Assets\Scripts\Handlers\PlayerHealthHandler.cs" Line="21" Column="2" />
-      <File FileName="Assets\Scripts\Behaviour\parallax.cs" Line="17" Column="1" />
       <File FileName="Assets\Scripts\Behaviour\TreeEnemyHit.cs" Line="57" Column="1" />
-      <File FileName="Assets\Scripts\Handlers\Callback.cs" Line="24" Column="13" />
-      <File FileName="Assets\Scripts\Handlers\HudController.cs" Line="38" Column="4" />
-      <File FileName="Assets\Scripts\Controllers\PlayerStateController.cs" Line="94" Column="38" />
+      <File FileName="Assets\Scripts\Handlers\Callback.cs" Line="25" Column="13" />
+      <File FileName="Assets\Scripts\Handlers\HudController.cs" Line="41" Column="4" />
+      <File FileName="Assets\Scripts\Controllers\PlayerStateController.cs" Line="82" Column="6" />
+      <File FileName="Assets\Scripts\Controllers\PlayerStateListener.cs" Line="189" Column="4" />
+      <File FileName="Assets\Scripts\Globals\Const.cs" Line="19" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

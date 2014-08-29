@@ -66,7 +66,7 @@ public class PlayerStateController : MonoBehaviour
     }
 
     //float jump = Input.GetKeyDown(KeyCode.Joystick1Button0);
-    if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && grounded)
+    if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Space)) && grounded)
     {
       grounded = false;
       if (onStateChange != null)
@@ -87,11 +87,6 @@ public class PlayerStateController : MonoBehaviour
 	          if (onStateChange != null)
 	            EventHandler.TriggerEvent(EEventID.EVENT_PLAYER_CHANGE_STATE, EPLayerState.EMud);
 
-				//TODO : DELETE
-				Hashtable data = new Hashtable();
-				data.Add("meter", EPLayerState.EMud);
-				data.Add("value", 4.0f);
-				EventHandler.TriggerEvent(EEventID.EVENT_HUD_HEALTH_CHANGE, data);
 			}
           break;
       }
