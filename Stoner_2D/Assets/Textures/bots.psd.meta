@@ -45,9 +45,9 @@ TextureImporter:
     - name: bots_0
       rect:
         serializedVersion: 2
-        x: 57
+        x: 63
         y: 371
-        width: 366
+        width: 168
         height: 250
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -57,8 +57,28 @@ TextureImporter:
         serializedVersion: 2
         x: 588
         y: 371
-        width: 342
+        width: 170
         height: 212
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bots_2
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 368
+        width: 182
+        height: 247
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bots_3
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 370
+        width: 166
+        height: 214
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

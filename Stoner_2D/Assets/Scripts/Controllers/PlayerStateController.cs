@@ -12,6 +12,7 @@ public class PlayerStateController : MonoBehaviour
     mud_left,
     mud_right,
     mud_shoot,
+		mud_spit,
     rock_idle,
     rock_left,
     rock_right,
@@ -68,11 +69,12 @@ public class PlayerStateController : MonoBehaviour
     //float jump = Input.GetKeyDown(KeyCode.Joystick1Button0);
     if ((Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Space)) && grounded)
     {
+      Debug.Log("HERE");
       grounded = false;
       if (onStateChange != null)
         onStateChange(PlayerStateController.playerStates.rock_jump);
     }
-    if (Input.GetKeyDown(KeyCode.Joystick1Button2) && grounded)
+    if (Input.GetKeyDown(KeyCode.Joystick1Button2)  || Input.GetKeyDown(KeyCode.RightShift) && grounded)
     {
       if (onStateChange != null)
         onStateChange(PlayerStateController.playerStates.rock_roll);
@@ -84,7 +86,6 @@ public class PlayerStateController : MonoBehaviour
       {
         case EPLayerState.ERock:
 			{
-	          if (onStateChange != null)
 	            EventHandler.TriggerEvent(EEventID.EVENT_PLAYER_CHANGE_STATE, EPLayerState.EMud);
 
 			}
@@ -96,15 +97,19 @@ public class PlayerStateController : MonoBehaviour
       switch (PlayerStateListener.m_ePlayerState)
       {
         case EPLayerState.EMud:
-          if (onStateChange != null)
             EventHandler.TriggerEvent(EEventID.EVENT_PLAYER_CHANGE_STATE, EPLayerState.ERock);
 
-          break;
-      }
-    }
-  }
+								break;
+						}
+				}
 
+				if (Input.GetKeyDown (KeyCode.B)&& PlayerStateListener.m_ePlayerState == EPLayerState.EMud ) {
+						if (onStateChange != null)
+								onStateChange (PlayerStateController.playerStates.mud_shoot);
 
+				}
+
+		}
   void OnCollisionEnter2D(Collision2D other)
   {
     if (other.gameObject.tag == "Platform")

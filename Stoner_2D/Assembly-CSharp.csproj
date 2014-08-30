@@ -46,12 +46,27 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BouncyMaterial.cs" />
+     <Compile Include="Assets\CheckMud.cs" />
+     <Compile Include="Assets\PlayerCollisionDamage.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\BouncyMaterial.cs" />
      <Compile Include="Assets\Scripts\Behaviour\BulletDamage.cs" />
      <Compile Include="Assets\Scripts\Behaviour\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Behaviour\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\ChangeToFreeRunner.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\DynamiteHazard.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\GreeseKill.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\HeatEmitterControl.cs" />
      <Compile Include="Assets\Scripts\Behaviour\JumpPlayer.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\OnBlast.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\PlayOnCoinPickUp.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\SetParticleSortingLayer.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\ThoreEnemyController.cs" />
      <Compile Include="Assets\Scripts\Behaviour\TreeEnemyHit.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\VentControl.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\WaterHazard.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\changedir.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\changedir1.cs" />
+     <Compile Include="Assets\Scripts\Behaviour\mudbullet.cs" />
      <Compile Include="Assets\Scripts\Behaviour\parallax.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerHandler.cs" />

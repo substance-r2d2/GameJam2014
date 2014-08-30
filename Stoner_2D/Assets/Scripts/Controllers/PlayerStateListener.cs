@@ -10,8 +10,9 @@ public class PlayerStateListener : MonoBehaviour
 		public float moveForce = 365f;			// Amount of force added to move the player left and right.
 		public float maxJumpForce = 100f;
 		public float freeRunnerSpeed = 1;
-
-
+        public int PickUp;
+			public GameObject bulletPrefab;
+        
 		private Animator anim;
 		private float time = 0;
 		private parallax[] environments;
@@ -30,17 +31,23 @@ public class PlayerStateListener : MonoBehaviour
 				EventHandler.AddListener (EEventID.EVENT_CONTROLLER_STATE_CHANGE, OnControllerStateChange);
 				environments = GameObject.Find("Parallexed_Bg").GetComponentsInChildren<parallax>();
 				OnControllerStateChange( EControllerState.EPlatformer);
+				DeactivateRoll ();
+			
 		}
 
 		void OnEnable ()
 		{
 				PlayerStateController.onStateChange += OnStateChange;
+				m_ePlayerState = EPLayerState.ERock;
+				EventHandler.TriggerEvent (EEventID.EVENT_PLAYER_CHANGE_STATE, EPLayerState.ERock);
 		}
 
 		void OnDisable ()
 		{
 				PlayerStateController.onStateChange -= OnStateChange;
 		}
+
+        
 
 		void OnStateCycle ()
 		{
@@ -88,43 +95,49 @@ public class PlayerStateListener : MonoBehaviour
 
 				switch (newState) {
 				case PlayerStateController.playerStates.rock_idle:
-						if(m_eControllerState == EControllerState.EPlatformer)
-							m_ePlayerState = EPLayerState.ERock;
+//						if(m_eControllerState == EControllerState.EPlatformer)
+//							
+							//m_ePlayerState = EPLayerState.ERock;
 						break;
 
 				case PlayerStateController.playerStates.rock_left:
-						m_ePlayerState = EPLayerState.ERock;
+						//m_ePlayerState = EPLayerState.ERock;
 						break;
 
 				case PlayerStateController.playerStates.rock_right:
-						m_ePlayerState = EPLayerState.ERock;
+						//m_ePlayerState = EPLayerState.ERock;
 						break;
 
 				case PlayerStateController.playerStates.rock_roll:
-						rigidbody2D.AddForce (new Vector2 (500, 0));
+						if(transform.localScale.x > 0)
+							rigidbody2D.AddForce (new Vector2 (500, 0));
+						if(transform.localScale.x < 0)
+							rigidbody2D.AddForce (new Vector2 (-500, 0));
+						ActivateRoll();
 						break;
 
 				case PlayerStateController.playerStates.rock_jump:
-						m_ePlayerState = EPLayerState.ERock;
+						//m_ePlayerState = EPLayerState.ERock;
 						rigidbody2D.AddForce (new Vector2 (0, maxJumpForce));
 						break;
 
 				case PlayerStateController.playerStates.mud_idle:
-						if(m_eControllerState == EControllerState.EPlatformer)
-						m_ePlayerState = EPLayerState.EMud;
+//						if(m_eControllerState == EControllerState.EPlatformer)
+						//m_ePlayerState = EPLayerState.EMud;
 						break;
 
 				case PlayerStateController.playerStates.mud_left:
-						m_ePlayerState = EPLayerState.EMud;
+						//m_ePlayerState = EPLayerState.EMud;
 						break;
 
 				case PlayerStateController.playerStates.mud_right:
-						m_ePlayerState = EPLayerState.EMud;
+						//m_ePlayerState = EPLayerState.EMud;
 						break;
 
 				case PlayerStateController.playerStates.mud_shoot:
-						m_ePlayerState = EPLayerState.EMud;
-						break;
+				anim.SetTrigger("is_spitting");
+				GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
+				break;
 				}
 				previousState = currentState;
 				currentState = newState;
@@ -199,6 +212,8 @@ public class PlayerStateListener : MonoBehaviour
 				// ... flip the player.
 							Flip ();
 			
+			
+
 		}
 
 		void MovePlayerRunner()
@@ -226,26 +241,44 @@ public class PlayerStateListener : MonoBehaviour
 
 		public void OnPlayerChange(System.Object newState)
 		{
-			if ((EPLayerState)newState == EPLayerState.ERock && PlayerStateListener.m_ePlayerState != EPLayerState.ERock) {
-						m_ePlayerState = (EPLayerState)newState;
-						anim.SetBool("is_rock", false);
-						Debug.Log("changing from rock to mud");
+			Debug.Log ((EPLayerState)newState);
+			if (((EPLayerState)newState == EPLayerState.ERock && PlayerStateListener.m_ePlayerState != EPLayerState.ERock) || m_ePlayerState == EPLayerState.ENone) {
+						
+					anim.SetBool("is_rock", true);
+					transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+					gameObject.GetComponent<BoxCollider2D>().enabled = false;
+					gameObject.GetComponent<CircleCollider2D>().enabled = true;
+					//rigidbody2D.fixedAngle = true;
+					Debug.Log("Changing from mud to rock");
+					m_ePlayerState = (EPLayerState)newState;			
+
 				}
+		else
 			if ((EPLayerState)newState == EPLayerState.EMud && PlayerStateListener.m_ePlayerState != EPLayerState.EMud) {
-						m_ePlayerState = (EPLayerState)newState;
-							anim.SetBool("is_rock", true);
-						Debug.Log("Changing from mud to rock");
+						
+					anim.SetBool("is_rock", false);
+					gameObject.GetComponent<BoxCollider2D>().enabled = true;
+					gameObject.GetComponent<CircleCollider2D>().enabled = false;
+					//rigidbody2D.fixedAngle = false;
+					Debug.Log("changing from rock to mud");
+					m_ePlayerState = (EPLayerState)newState;
 				}
 		}
 
 		public void OnControllerStateChange(System.Object newState)
 		{
 			m_eControllerState = (EControllerState)newState;
-			if (m_eControllerState == EControllerState.EFreeRunnerRight)
-						freeRunnerSpeed = 1f;
-				else
-				if (m_eControllerState == EControllerState.EFreeRunnerLeft)
-						freeRunnerSpeed = -1f;
+            if (m_eControllerState == EControllerState.EFreeRunnerRight)
+            {
+              freeRunnerSpeed = 1f;
+              maxSpeed += 2.5f;
+            }
+            else
+              if (m_eControllerState == EControllerState.EFreeRunnerLeft)
+              {
+                freeRunnerSpeed = -1f;
+                maxSpeed += 2.5f;
+              }
 		}
 
 		public void SetBgScrollRate()
@@ -253,4 +286,27 @@ public class PlayerStateListener : MonoBehaviour
 			foreach (parallax pvar in environments)
 				pvar.xfactor = rigidbody2D.velocity.x;
 		}
+
+		private void ActivateRoll()
+		{
+			ParticleSystem dustTrail = this.gameObject.GetComponentInChildren<ParticleSystem> ();
+			TrailRenderer trail = this.gameObject.GetComponentInChildren<TrailRenderer> ();
+			trail.enabled = true;
+			dustTrail.enableEmission = true;
+			if(transform.localScale.x > 0)
+				anim.SetTrigger ("is_rolling");
+			
+			if(transform.localScale.x < 0)
+				anim.SetTrigger ("is_rolling_right");
+		}
+
+		private void DeactivateRoll()
+		{
+			ParticleSystem dustTrail = this.gameObject.GetComponentInChildren<ParticleSystem> ();
+			dustTrail.enableEmission = false;
+			TrailRenderer trail = this.gameObject.GetComponentInChildren<TrailRenderer> ();
+			trail.enabled = false;
+		}
+
+
 }

@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: a28cdb260c731094eac8ef54203283e8
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: hammerbot_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1269
+        width: 422
+        height: 647
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1266
+        width: 417
+        height: 651
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 1266
+        width: 436
+        height: 654
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1257
+        width: 430
+        height: 663
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 1260
+        width: 426
+        height: 660
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 553
+        width: 425
+        height: 628
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 559
+        width: 462
+        height: 625
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 559
+        width: 540
+        height: 616
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 556
+        width: 610
+        height: 609
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 550
+        width: 624
+        height: 612
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammerbot_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 659
+        height: 449
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

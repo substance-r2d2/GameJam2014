@@ -10,8 +10,8 @@ public class JumpPlayer : MonoBehaviour {
   {
     if (other.gameObject.tag == "Player")
     {
-      other.gameObject.rigidbody2D.velocity = new Vector2(0, 0);
-      other.gameObject.rigidbody2D.AddForce(new Vector2(0, maxJumpForce));
+     
+      other.gameObject.rigidbody2D.AddForce(new Vector2(0, maxJumpForce * 2));
     }
   }
 }
